@@ -1,41 +1,264 @@
-# Compiled Lua sources
-luac.out
+local playerfiststat = game:GetService("Players").LocalPlayer.PrivateStats.FistStrength.Value
+	local Spheres = ""
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+	repeat wait() until game.Players.LocalPlayer.PrivateStats:FindFirstChild("FistStrength")
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+	if playerfiststat >= 999 and playerfiststat <= 10000 then Spheres = "EnergySphere1"
+	elseif playerfiststat >= 9999 and playerfiststat <= 100000 then Spheres = "EnergySphere2"
+	elseif playerfiststat >= 99999 and playerfiststat <= 1000000 then Spheres = "EnergySphere3"
+	elseif playerfiststat >= 999999 and playerfiststat <= 10000000 then Spheres = "EnergySphere4"
+	elseif playerfiststat >= 9999999 and playerfiststat <= 100000000 then Spheres = "EnergySphere5"
+	elseif playerfiststat >= 99999999 and playerfiststat <= 10000000000 then Spheres = "EnergySphere6"
+	elseif playerfiststat >= 9999999999 and playerfiststat <= 1000000000000 then Spheres = "EnergySphere7"
+	elseif playerfiststat >= 999999999999 and playerfiststat <= 1000000000000000 then Spheres = "EnergySphere8"
+	elseif playerfiststat >= 999999999999999 then Spheres = "EnergySphere9"
+	end
 
-# Precompiled Headers
-*.gch
-*.pch
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local n1 = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local stof = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local cbrof = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local ston = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local cbron = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local specoff = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local specon = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local wh = Instance.new("Frame")
+local whocbr = Instance.new("TextLabel")
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.0383411571, 0, 0.900489271, 0)
+Frame.Size = UDim2.new(0, 261, 0, 46)
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+UICorner.Parent = Frame
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+n1.Name = "n1"
+n1.Parent = Frame
+n1.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+n1.Position = UDim2.new(0.0535714179, 0, 0.155556053, 0)
+n1.Size = UDim2.new(0, 105, 0, 30)
+n1.ClearTextOnFocus = false
+n1.Font = Enum.Font.SourceSansBold
+n1.PlaceholderColor3 = Color3.fromRGB(142, 33, 178)
+n1.Text = "Player Name..."
+n1.TextColor3 = Color3.fromRGB(115, 0, 255)
+n1.TextSize = 14.000
+n1.TextWrapped = true
 
+UICorner_2.Parent = n1
+
+stof.Name = "stof"
+stof.Parent = Frame
+stof.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+stof.Position = UDim2.new(0.670628488, 0, 0.155556053, 0)
+stof.Size = UDim2.new(0, 31, 0, 30)
+stof.Font = Enum.Font.SourceSansBold
+stof.Text = "STACK OFF"
+stof.TextColor3 = Color3.fromRGB(255, 0, 0)
+stof.TextScaled = true
+stof.TextSize = 14.000
+stof.TextWrapped = true
+stof.MouseButton1Click:Connect(function()
+    stof.Visible = false
+    ston.Visible = true
+_G.st = false
+end)
+UICorner_3.Parent = stof
+
+cbrof.Name = "cbrof"
+cbrof.Parent = Frame
+cbrof.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+cbrof.Position = UDim2.new(0.478912592, 0, 0.155556053, 0)
+cbrof.Size = UDim2.new(0, 31, 0, 30)
+cbrof.Visible = false
+cbrof.Font = Enum.Font.SourceSansBold
+cbrof.Text = "-"
+cbrof.TextColor3 = Color3.fromRGB(16, 28, 255)
+cbrof.TextScaled = true
+cbrof.TextSize = 14.000
+cbrof.TextWrapped = true
+cbrof.MouseButton1Click:Connect(function()
+cbrof.Visible = false
+cbron.Visible = true
+_G.ll = false
+_G.cbrrrr = false
+end)
+
+UICorner_4.Parent = cbrof
+
+ston.Name = "ston"
+ston.Parent = Frame
+ston.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+ston.Position = UDim2.new(0.670628488, 0, 0.155556053, 0)
+ston.Size = UDim2.new(0, 31, 0, 30)
+ston.Font = Enum.Font.SourceSansBold
+ston.Text = "STACK ON"
+ston.TextColor3 = Color3.fromRGB(255, 0, 0)
+ston.TextScaled = true
+ston.TextSize = 14.000
+ston.TextWrapped = true
+ston.MouseButton1Click:Connect(function()
+    ston.Visible = false
+    stof.Visible = true
+    _G.st = true
+	while _G.st == true do
+			task.wait()
+			pcall (function()
+
+					local x2 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x
+					local y3 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y
+					local z2 = game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z
+				
+task.wait()
+                    local l = {[1] = "Skill_BulletPunch",[2] = "Left",[3] = Vector3.new(x, 9000, z)}
+					local Event = game:GetService("ReplicatedStorage").RemoteEvent
+					Event:FireServer(l)
+					local args = {[1] = {[1] = "Skill_SpherePunch",[2] = Vector3.new(x2,1000000000000,z2)}}
+					game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+					for i, v in ipairs (game:GetService("Workspace").Storage:GetChildren()) do
+						if v.Name == Spheres then
+						    if isnetworkowner(v) then
+						    v.CFrame = CFrame.new(x2, y3+5,z2)
+						    v.CFrame = CFrame.new(x6, y6,z6)
+						    
+						    end
+                                end
+				end
+					       end)
+			end
+end)
+UICorner_5.Parent = ston
+
+cbron.Name = "cbron"
+cbron.Parent = Frame
+cbron.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+cbron.Position = UDim2.new(0.478912592, 0, 0.155556053, 0)
+cbron.Size = UDim2.new(0, 31, 0, 30)
+cbron.Font = Enum.Font.SourceSansBold
+cbron.Text = "+"
+cbron.TextColor3 = Color3.fromRGB(16, 28, 255)
+cbron.TextScaled = true
+cbron.TextSize = 14.000
+cbron.TextWrapped = true
+cbron.MouseButton1Click:Connect(function()
+    cbron.Visible = false
+    cbrof.Visible = true
+_G.ll = true
+while _G.ll == true do
+task.wait()
+                    local function getRoot(char)
+    pcall(function()
+            rootPart =
+                char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Torso") or
+                char:FindFirstChild("UpperTorso")
+end)
+    return rootPart
+end
+local targets = {}
+local Players = game:GetService("Players")
+_G.cbrrrr = true
+local function loopbring(player, on_off_value)
+    table.insert(targets, player)
+    for i, v in ipairs(targets) do
+        print(v)
+    end
+    if on_off_value == true then
+        _G.cbrrrr = true
+    elseif on_off_value == false then
+        _G.cbrrrr = false
+    end
+end
+loopbring((n1.Text), true)
+while _G.cbrrrr == true do
+    task.wait()
+    pcall(function()
+            for i, v in ipairs(targets) do
+                whocbr.Text = ""..v
+                if game.Players[v].Character:FindFirstChild("ForceField") or game.Players[v].Character:FindFirstChild("SafeZoneShield") then
+                elseif game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+                else
+            getRoot(game.Players:FindFirstChild(n1.Text).Character).CFrame = CFrame.new(-11.9963, -4.68547, 17.9461)
+end
+end
+end)
+end
+end
+end)
+
+UICorner_6.Parent = cbron
+
+specoff.Name = "specoff"
+specoff.Parent = Frame
+specoff.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+specoff.Position = UDim2.new(0.854458272, 0, 0.155556053, 0)
+specoff.Size = UDim2.new(0, 31, 0, 30)
+specoff.Visible = false
+specoff.Font = Enum.Font.SourceSansBold
+specoff.Text = "SPEC OFF"
+specoff.TextColor3 = Color3.fromRGB(0, 0, 0)
+specoff.TextScaled = true
+specoff.TextSize = 14.000
+specoff.TextWrapped = true
+specoff.MouseButton1Click:Connect(function()
+specoff.Visible = false
+specon.Visible = true
+_G.spe = false
+end)
+UICorner_7.Parent = specoff
+
+specon.Name = "specon"
+specon.Parent = Frame
+specon.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+specon.Position = UDim2.new(0.854458272, 0, 0.155556053, 0)
+specon.Size = UDim2.new(0, 31, 0, 30)
+specon.Font = Enum.Font.SourceSansBold
+specon.Text = "SPEC ON"
+specon.TextColor3 = Color3.fromRGB(0, 0, 0)
+specon.TextScaled = true
+specon.TextSize = 14.000
+specon.TextWrapped = true
+specon.MouseButton1Click:Connect(function()
+    specon.Visible = false
+    specoff.Visible = true
+_G.spe = true
+while _G.spe == true do task.wait()
+    game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(n1.Text).Character.Humanoid
+    if not _G.spe == true then
+    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+    end
+    end
+end)
+UICorner_8.Parent = specon
+
+wh.Name = "wh"
+wh.Parent = Frame
+wh.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+wh.BackgroundTransparency = 0.320
+wh.BorderColor3 = Color3.fromRGB(0, 0, 0)
+wh.BorderSizePixel = 3
+wh.Position = UDim2.new(0.0153256701, 0, -1.97826087, 0)
+wh.Size = UDim2.new(0, 124, 0, 83)
+
+whocbr.Name = "whocbr"
+whocbr.Parent = wh
+whocbr.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+whocbr.BackgroundTransparency = 1.000
+whocbr.Size = UDim2.new(0, 124, 0, 83)
+whocbr.Font = Enum.Font.ArialBold
+whocbr.Text = "Who will we put on Cbring"
+whocbr.TextColor3 = Color3.fromRGB(0, 0, 0)
+whocbr.TextScaled = true
+whocbr.TextSize = 14.000
+whocbr.TextWrapped = true

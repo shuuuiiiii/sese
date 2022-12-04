@@ -234,10 +234,12 @@ specon.MouseButton1Click:Connect(function()
     specoff.Visible = true
 _G.spe = true
 while _G.spe == true do task.wait()
-    game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(n1.Text).Character.Humanoid
+pcall(function()
+game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(n1.Text).Character.Humanoid
     if not _G.spe == true then
     game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
     end
+    end)
     end
 end)
 UICorner_8.Parent = specon

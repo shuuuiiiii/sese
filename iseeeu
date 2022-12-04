@@ -132,7 +132,7 @@ task.wait()
 						    if isnetworkowner(v) then
 						    v.CFrame = CFrame.new(x2, y3+5,z2)
 						    v.CFrame = CFrame.new(x6, y6,z6)
-						    
+
 						    end
                                 end
 				end
@@ -186,8 +186,8 @@ while _G.cbrrrr == true do
     pcall(function()
             for i, v in ipairs(targets) do
                 whocbr.Text = ""..v
-                if game.Players[v].Character:FindFirstChild("ForceField") or game.Players[v].Character:FindFirstChild("SafeZoneShield") then
-                elseif game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+                if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") or game.Players[v].Character:FindFirstChild("ForceField") or game.Players[v].Character:FindFirstChild("SafeZoneShield") then
+                getRoot(game.Players:FindFirstChild(n1.Text).Character).CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(100,0,0)
                 else
             getRoot(game.Players:FindFirstChild(n1.Text).Character).CFrame = CFrame.new(-11.9963, -4.68547, 17.9461)
 end
@@ -234,8 +234,8 @@ specon.MouseButton1Click:Connect(function()
     specoff.Visible = true
 _G.spe = true
 while _G.spe == true do task.wait()
-pcall(function()
-game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(n1.Text).Character.Humanoid
+    pcall(function()
+    game.Workspace.Camera.CameraSubject = game.Players:FindFirstChild(n1.Text).Character.Humanoid
     if not _G.spe == true then
     game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
     end
